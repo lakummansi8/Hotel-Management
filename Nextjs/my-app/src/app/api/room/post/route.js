@@ -34,9 +34,9 @@ export async function POST(req) {
     const gallery = formData.getAll("gallery");
 
     // upload files
-    const heroPath = await uploadsFile(heroImage);
+    const heroPath = heroImage ? await uploadsFile(heroImage):null;
 
-    const highlightPath = await uploadsFile(highlightImage);
+    const highlightPath = highlightImage ? await uploadsFile(highlightImage):null;
 
     const galleryPath = [];
 
