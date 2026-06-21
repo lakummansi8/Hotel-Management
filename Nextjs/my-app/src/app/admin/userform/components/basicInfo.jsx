@@ -46,6 +46,10 @@ export default function BasicInfo({formData,setFormData}) {
         
                     <div>
                       <label>Hero Image URL</label>
+                      {
+                        typeof formData.heroImage=== "string" &&
+                        (<img src={formData.heroImage} alt="hero" width="200"/>)
+                      }
                       <input
                         type="file"
                         accept="image/*"

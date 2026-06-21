@@ -4,8 +4,8 @@ import { NextResponse } from "next/server";
 
 export async function GET(req, { params }) {
   await connectDB();
-
-  const data = await Room.findById(params.id);
+  const resolvedParams=await params;
+  const data = await Room.findById(resolvedParams.id);
 
   if (!data) {
     return NextResponse.json({
